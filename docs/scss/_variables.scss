@@ -1,0 +1,101 @@
+// TYPOGRAPHY
+$ff: 'Space Mono', sans-serif;
+$bold: 700;
+
+$fs-hd-sm: 16px;
+$fw-hd-sm: $bold;
+$lh-hd-sm: 24px;
+
+$fs-hd-xs: 13px;
+$fw-hd-xs: $bold;
+$lh-hd-xs: 19px;
+
+
+$fs-bd-sm: 16px;
+$fw-bd-sm: $bold;
+$lh-bd-sm: 24px;
+
+$fs-bd-rg: 20px;
+$fw-bd-rg: $bold;
+$lh-bd-rg: 30px;
+
+$fs-bd-md: 24px;
+$fw-bd-md: $bold;
+$lh-bd-md: 36px;
+
+$fs-bd-lg: 32px;
+$fw-bd-lg: $bold;
+$lh-bd-lg: 47px;
+$ls-bd-lg: -0.67px;
+
+$fs-bd-xl: 48px;
+$fw-bd-xl: $bold;
+$lh-bd-xl: 71px;
+$ls-bd-xl: -1px;
+
+@mixin heading-sm {
+    font-size: $fs-hd-sm;
+    font-weight: $fw-hd-sm;
+    line-height: $lh-hd-sm;
+}
+
+@mixin heading-xs {
+    font-size: $fs-hd-xs;
+    font-weight: $fw-hd-xs;
+    line-height: $lh-hd-xs;
+}
+
+@mixin body-xl {
+    font-size: $fs-bd-xl;
+    font-weight: $fw-bd-xl;
+    line-height: $lh-bd-xl;
+    letter-spacing: $ls-bd-xl;
+}
+
+@mixin body-lg {
+    font-size: $fs-bd-lg;
+    font-weight: $fw-bd-lg;
+    line-height: $lh-bd-lg;
+    letter-spacing: $ls-bd-lg;
+}
+
+@mixin body-md {
+    font-size: $fs-bd-md;
+    font-weight: $fw-bd-md;
+    line-height: $lh-bd-md;
+}
+
+@mixin body-rg {
+    font-size: $fs-bd-rg;
+    font-weight: $fw-bd-rg;
+    line-height: $lh-bd-rg;
+}
+
+@mixin body-sm {
+    font-size: $fs-bd-sm;
+    font-weight: $fw-bd-sm;
+    line-height: $lh-bd-sm;
+}
+
+// COLOR
+
+$clr-pri-1: hsl(172, 67%, 45%);
+$clr-neu-1: hsl(183, 100%, 15%);
+$clr-neu-1b: hsl(183, 78%, 24%);
+$clr-neu-2: hsl(186, 14%, 43%);
+$clr-neu-3: hsl(184, 14%, 56%);
+$clr-neu-4: hsl(185, 41%, 84%);
+$clr-neu-5: hsl(189, 41%, 97%);
+$clr-neu-6: hsl(0, 0%, 100%);
+
+// Mixins, functions, and other
+
+@function px($pixels1, $pixels2: null) {
+    @if ($pixels2 == null) {@return $pixels1 * 1px;}
+    @else {@return $pixels1 * 1px $pixels2 * 1px;}
+}
+
+@mixin dim($width, $height) {
+    width: px($width);
+    height: px($height);
+};

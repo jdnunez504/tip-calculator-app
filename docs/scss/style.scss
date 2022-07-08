@@ -1,0 +1,171 @@
+
+@import 'reset';
+@import 'variables';
+
+body {
+    font-family: $ff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: $clr-neu-4;
+    padding-top: px(50);
+
+}
+.app {
+    background-color: $clr-neu-6;
+    padding: px(32);
+    border-top-left-radius: px(25);
+    border-top-right-radius: px(25);
+}
+
+.logo {
+    margin: auto;
+    margin-bottom: px(42);
+    @include dim(86.6, 53.14);
+    background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+}
+
+.calculator {
+    .bill {
+        position: relative;
+        margin-bottom: px(32);
+        &-title {
+            @include heading-sm;
+            color: $clr-neu-2;
+            margin-bottom: px(6);
+        }
+        .icon {
+            position: relative;
+            top: px(-32);
+            left: px(18);
+            &--dollar {
+                @include dim(9.84, 15.46);
+                background-image: url('../images/icon-dollar.svg');
+            }
+        }
+        &-input {
+            @include body-md;
+            width: 100%;
+            padding: px(6, 18);
+            color: $clr-neu-1;
+            background-color: $clr-neu-5;
+            text-align: right;
+            border-radius: px(5);
+        }
+        
+    }
+    .tips {
+        margin-bottom: px(32);
+        &-title {
+            @include heading-sm;
+            color: $clr-neu-2;
+            margin-bottom: px(6);
+        }
+        &-select {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: px(16);
+            .percentage {
+                @include body-md;
+                background-color: $clr-neu-1;
+                color: $clr-neu-6;
+                padding: px(6, 16);
+                border-radius: px(5);
+                text-align: center;
+                cursor: pointer;
+                &:hover {
+                    background-color: $clr-neu-4;
+                    color: $clr-neu-1;
+                }
+                &:selected {
+                    background-color: $clr-pri-1;
+                    color: $clr-neu-1;
+                }
+                &.percentage6 {
+                    background-color: $clr-neu-5;
+                    color: $clr-neu-2;    
+                }
+                .custom {
+                    width: 100%;
+                    //background-color: $clr-neu-5;
+                }
+            }
+        }
+    }
+    .people {
+        position: relative;
+        margin-bottom: px(32);
+        &-title {
+            @include heading-sm;
+            color: $clr-neu-2;
+            margin-bottom: px(6);
+        }
+        .icon {
+            position: relative;
+            top: px(-32);
+            left: px(18);
+            &--person {
+                @include dim(13, 16);
+                background-image: url('../images/icon-person.svg');
+            }
+        }
+        &-input {
+            @include body-md;
+            width: 100%;
+            padding: px(6, 18);
+            color: $clr-neu-1;
+            background-color: $clr-neu-5;
+            text-align: right;
+            border-radius: px(5);
+        }
+        
+    }
+}
+.result {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: px(20);
+    padding: px(24);
+    padding-top: px(37);
+    background-color: $clr-neu-1;
+    border-radius: px(15);
+    &-label {
+        display: flex;
+        flex-direction: column;
+        @include heading-sm;
+        color: $clr-neu-6;
+        & span {
+            @include heading-xs;
+            color: $clr-neu-2;
+        }
+    }
+    &-result {
+        @include body-lg;
+        color: $clr-pri-1;
+        justify-self: flex-end;
+    }
+    .reset {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        @include body-rg;
+        text-transform: uppercase;
+        text-align: center;
+        padding: px(6, 32);
+        background-color: $clr-neu-1b;
+        color: $clr-neu-1;
+        border-radius: px(5);
+        margin-top: px(12);
+        cursor: pointer;
+        &:hover {
+            background-color: $clr-neu-4;
+            color: $clr-neu-1;
+        }
+        &:enabled {
+            background-color: $clr-pri-1;
+            color: $clr-neu-1;
+        }
+    }
+}

@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   
   <title>Frontend Mentor | Tip calculator app</title>
 
@@ -15,8 +19,44 @@
   </style>
 </head>
 <body>
+  <main class="main">
+    <div class="logo"></div>
+    <div class="app">
+      <div class="calculator">
+        <div class="bill">
+          <div class="bill-title">Bill</div>
+          <input type="text" class="bill-input" value="" placeholder="0"><div class="icon icon--dollar"></div>
+        </div>
+        <div class="tips">
+          <div class="tips-title">Select Tip %</div>
+          <ul class="tips-select">
+            <div class="percentage percentage1" data-value="0.05">5%</div>
+            <div class="percentage percentage2" data-value="0.10">10%</div>
+            <div class="percentage percentage3" data-value="0.15">15%</div>
+            <div class="percentage percentage4" data-value="0.25">25%</div>
+            <div class="percentage percentage5" data-value="0.50">50%</div>
+            <div class="percentage percentage6">
+              <input type="text" class="custom" placeholder="Custom" value="">
+            </div>
+          </ul>
+        </div>
+        <div class="people">
+          <div class="people-title">Number of People</div>
+          <input type="text" class="people-input" value="" placeholder="0"><div class="icon icon--person"></div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="result-label">Tip Amount<span>/ person</span></div>
+        <div class="result-result result-tip">$0.00</div>
+        <div class="result-label">Total<span>/ person</span></div>
+        <div class="result-result result-total">$0.00</div>
+        <div class="reset">Reset</div>
+      </div>
+    </div>
+    
+  </main>
 
-  Bill
+  <!-- Bill
 
   Select Tip %
   5%
@@ -34,11 +74,11 @@
   Total
   / person
 
-  Reset
+  Reset -->
   
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>

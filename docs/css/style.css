@@ -1,0 +1,277 @@
+/***
+    The new CSS reset - version 1.7.2 (last updated 23.6.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
+:-ms-input-placeholder {
+  color: unset;
+}
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+body {
+  font-family: "Space Mono", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(185deg, 41%, 84%);
+  padding-top: 50px;
+}
+
+.app {
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 32px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.logo {
+  margin: auto;
+  margin-bottom: 42px;
+  width: 86.6px;
+  height: 53.14px;
+  background-image: url("../images/logo.svg");
+  background-repeat: no-repeat;
+}
+
+.calculator .bill {
+  position: relative;
+  margin-bottom: 32px;
+}
+.calculator .bill-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: hsl(186deg, 14%, 43%);
+  margin-bottom: 6px;
+}
+.calculator .bill .icon {
+  position: relative;
+  top: -32px;
+  left: 18px;
+}
+.calculator .bill .icon--dollar {
+  width: 9.84px;
+  height: 15.46px;
+  background-image: url("../images/icon-dollar.svg");
+}
+.calculator .bill-input {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  width: 100%;
+  padding: 6px 18px;
+  color: hsl(183deg, 100%, 15%);
+  background-color: hsl(189deg, 41%, 97%);
+  text-align: right;
+  border-radius: 5px;
+}
+.calculator .tips {
+  margin-bottom: 32px;
+}
+.calculator .tips-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: hsl(186deg, 14%, 43%);
+  margin-bottom: 6px;
+}
+.calculator .tips-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+.calculator .tips-select .percentage {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  background-color: hsl(183deg, 100%, 15%);
+  color: hsl(0deg, 0%, 100%);
+  padding: 6px 16px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.calculator .tips-select .percentage:hover {
+  background-color: hsl(185deg, 41%, 84%);
+  color: hsl(183deg, 100%, 15%);
+}
+.calculator .tips-select .percentage:selected {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+.calculator .tips-select .percentage.percentage6 {
+  background-color: hsl(189deg, 41%, 97%);
+  color: hsl(186deg, 14%, 43%);
+}
+.calculator .tips-select .percentage .custom {
+  width: 100%;
+}
+.calculator .people {
+  position: relative;
+  margin-bottom: 32px;
+}
+.calculator .people-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: hsl(186deg, 14%, 43%);
+  margin-bottom: 6px;
+}
+.calculator .people .icon {
+  position: relative;
+  top: -32px;
+  left: 18px;
+}
+.calculator .people .icon--person {
+  width: 13px;
+  height: 16px;
+  background-image: url("../images/icon-person.svg");
+}
+.calculator .people-input {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  width: 100%;
+  padding: 6px 18px;
+  color: hsl(183deg, 100%, 15%);
+  background-color: hsl(189deg, 41%, 97%);
+  text-align: right;
+  border-radius: 5px;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 24px;
+  padding-top: 37px;
+  background-color: hsl(183deg, 100%, 15%);
+  border-radius: 15px;
+}
+.result-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: hsl(0deg, 0%, 100%);
+}
+.result-label span {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 19px;
+  color: hsl(186deg, 14%, 43%);
+}
+.result-result {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 47px;
+  letter-spacing: -0.67px;
+  color: hsl(172deg, 67%, 45%);
+  justify-self: flex-end;
+}
+.result .reset {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 6px 32px;
+  background-color: hsl(183deg, 78%, 24%);
+  color: hsl(183deg, 100%, 15%);
+  border-radius: 5px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+.result .reset:hover {
+  background-color: hsl(185deg, 41%, 84%);
+  color: hsl(183deg, 100%, 15%);
+}
+.result .reset:enabled {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}/*# sourceMappingURL=style.css.map */
