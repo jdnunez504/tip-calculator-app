@@ -225,15 +225,13 @@ main {
   background-color: hsl(185deg, 41%, 84%);
   color: hsl(183deg, 100%, 15%);
 }
-.calculator .tips-select .percentage:selected {
+.calculator .tips-select .percentage.selected {
   background-color: hsl(172deg, 67%, 45%);
   color: hsl(183deg, 100%, 15%);
 }
-.calculator .tips-select .percentage.percentage6 {
+.calculator .tips-select .percentage.custom {
   background-color: hsl(189deg, 41%, 97%);
   color: hsl(186deg, 14%, 43%);
-}
-.calculator .tips-select .percentage .custom {
   width: 100%;
 }
 .calculator .people {

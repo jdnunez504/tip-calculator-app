@@ -112,15 +112,14 @@ main {
                     background-color: $clr-neu-4;
                     color: $clr-neu-1;
                 }
-                &:selected {
+                &.selected {
                     background-color: $clr-pri-1;
                     color: $clr-neu-1;
                 }
-                &.percentage6 {
+                
+                &.custom {
                     background-color: $clr-neu-5;
-                    color: $clr-neu-2;    
-                }
-                .custom {
+                    color: $clr-neu-2;
                     width: 100%;
                     //background-color: $clr-neu-5;
                 }

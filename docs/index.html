@@ -25,24 +25,22 @@
       <div class="calculator">
         <div class="bill">
           <div class="bill-title">Bill</div>
-          <input type="text" class="bill-input" value="" placeholder="0"><div class="icon icon--dollar"></div>
+          <input type="text" class="bill-input" value="" placeholder="0" id="bill"><div class="icon icon--dollar"></div>
         </div>
         <div class="tips">
           <div class="tips-title">Select Tip %</div>
           <ul class="tips-select">
-            <div class="percentage percentage1" data-value="0.05">5%</div>
-            <div class="percentage percentage2" data-value="0.10">10%</div>
-            <div class="percentage percentage3" data-value="0.15">15%</div>
-            <div class="percentage percentage4" data-value="0.25">25%</div>
-            <div class="percentage percentage5" data-value="0.50">50%</div>
-            <div class="percentage percentage6">
-              <input type="text" class="custom" placeholder="Custom" value="">
-            </div>
+            <button type="button" class="percentage percentage1" data-value="0.05">5%</button>
+            <button type="button" class="percentage percentage2" data-value="0.10">10%</button>
+            <button type="button" class="percentage percentage3" data-value="0.15">15%</button>
+            <button type="button" class="percentage percentage4" data-value="0.25">25%</button>
+            <button type="button" class="percentage percentage5" data-value="0.50">50%</button>
+            <input type="text" class="percentage custom" placeholder="Custom" value="" id="custom">
           </ul>
         </div>
         <div class="people">
           <div class="people-title">Number of People</div>
-          <input type="text" class="people-input" value="" placeholder="0"><div class="icon icon--person"></div>
+          <input type="text" class="people-input" value="" placeholder="0" id="people"><div class="icon icon--person"></div>
         </div>
       </div>
       <div class="result">
@@ -51,35 +49,16 @@
         <div class="result-label">Total<span>/ person</span></div>
         <div class="result-result result-total">$0.00</div>
         <div class="spacer"></div>
-        <div class="reset">Reset</div>
+        <button type="button" class="reset">Reset</button>
       </div>
     </div>
     
   </main>
-
-  <!-- Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset -->
   
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  <script src="js/main.js"></script>
 </body>
 </html>
