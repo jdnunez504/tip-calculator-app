@@ -11,13 +11,25 @@ main {
     flex-direction: column;
     background-color: $clr-neu-4;
     padding-top: px(50);
-
+    @include min-width($desktop) {
+        height: 100vh;
+    }
+    
 }
 .app {
+    display: grid;
     background-color: $clr-neu-6;
     padding: px(32);
     border-top-left-radius: px(25);
     border-top-right-radius: px(25);
+    @include min-width($desktop) {
+        padding-left: px(48);
+        padding-right: px(48);
+        grid-template-columns: 1fr 1fr;
+        border-bottom-left-radius: px(25);
+        border-bottom-right-radius: px(25);
+        margin: auto;
+    }
 }
 
 .logo {
@@ -29,9 +41,18 @@ main {
 }
 
 .calculator {
+    padding-top: px(0);
+    padding-bottom: px(16);
+    @include min-width($desktop) {
+        padding-top: px(12);
+        padding-right: px(48);
+    }
     .bill {
         position: relative;
-        margin-bottom: px(32);
+        padding-bottom: px(16);
+        @include min-width($desktop) {
+            padding-bottom: px(24);
+        }
         &-title {
             @include heading-sm;
             color: $clr-neu-2;
@@ -50,7 +71,7 @@ main {
             @include body-md;
             width: 100%;
             padding: px(6, 18);
-            color: $clr-neu-1;
+            color: $clr-neu-3;
             background-color: $clr-neu-5;
             text-align: right;
             border-radius: px(5);
@@ -59,15 +80,26 @@ main {
     }
     .tips {
         margin-bottom: px(32);
+        @include min-width($desktop) {
+            margin-bottom: px(40);
+        }
         &-title {
             @include heading-sm;
             color: $clr-neu-2;
             margin-bottom: px(6);
+            @include min-width($desktop) {
+                margin-bottom: px(16);
+            }
         }
         &-select {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: px(16);
+            @include min-width($desktop) {
+                margin-bottom: px(16);
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: px(16);
+            }
             .percentage {
                 @include body-md;
                 background-color: $clr-neu-1;
@@ -97,7 +129,7 @@ main {
     }
     .people {
         position: relative;
-        margin-bottom: px(32);
+        
         &-title {
             @include heading-sm;
             color: $clr-neu-2;
@@ -116,7 +148,7 @@ main {
             @include body-md;
             width: 100%;
             padding: px(6, 18);
-            color: $clr-neu-1;
+            color: $clr-neu-3;
             background-color: $clr-neu-5;
             text-align: right;
             border-radius: px(5);
@@ -132,6 +164,14 @@ main {
     padding-top: px(37);
     background-color: $clr-neu-1;
     border-radius: px(15);
+    @include min-width($desktop) {
+        align-items: center;
+        padding: px(40);
+        padding-top: px(40);
+        margin-bottom: px(0);
+        grid-template-rows: 1fr, 1fr, 1fr, 1fr;
+        grid-gap: px(20);
+    }
     &-label {
         display: flex;
         flex-direction: column;
@@ -146,8 +186,19 @@ main {
         @include body-lg;
         color: $clr-pri-1;
         justify-self: flex-end;
+        @include min-width($desktop) {
+            @include body-xl;
+        }
+    }
+    .spacer {
+        display: none;
+        height: 71px;
+        @include min-width($desktop) {
+            display: block;
+        }
     }
     .reset {
+        height: px(48);
         grid-column-start: 1;
         grid-column-end: 3;
         @include body-rg;
@@ -159,6 +210,10 @@ main {
         border-radius: px(5);
         margin-top: px(12);
         cursor: pointer;
+        @include min-width($desktop) {
+            grid-row-start: 4;
+            grid-row-end: 5;
+        }
         &:hover {
             background-color: $clr-neu-4;
             color: $clr-neu-1;

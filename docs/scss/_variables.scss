@@ -88,6 +88,9 @@ $clr-neu-4: hsl(185, 41%, 84%);
 $clr-neu-5: hsl(189, 41%, 97%);
 $clr-neu-6: hsl(0, 0%, 100%);
 
+// RESPONSIVENESS
+$desktop: 900px;
+
 // Mixins, functions, and other
 
 @function px($pixels1, $pixels2: null) {
@@ -99,3 +102,9 @@ $clr-neu-6: hsl(0, 0%, 100%);
     width: px($width);
     height: px($height);
 };
+
+@mixin min-width($desktop) {
+    @media screen and (min-width: $desktop) {
+        @content;
+    }
+}
