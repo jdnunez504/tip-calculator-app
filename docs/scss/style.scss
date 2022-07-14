@@ -75,10 +75,21 @@ main {
             background-color: $clr-neu-5;
             text-align: right;
             border-radius: px(5);
+            &:focus {
+                border: 2px solid rgb(0, 119, 255);
+                &:valid {
+                    border: 2px solid rgb(31, 187, 96);
+                }
+            }
+            
+            &:invalid {
+                border: 2px solid rgb(203, 70, 17);
+            }
         }
         
     }
     .tips {
+        position: relative;
         margin-bottom: px(32);
         @include min-width($desktop) {
             margin-bottom: px(40);
@@ -112,6 +123,9 @@ main {
                     background-color: $clr-neu-4;
                     color: $clr-neu-1;
                 }
+                &:focus {
+                    border: 3px solid rgb(0, 119, 255);
+                }
                 &.selected {
                     background-color: $clr-pri-1;
                     color: $clr-neu-1;
@@ -121,7 +135,17 @@ main {
                     background-color: $clr-neu-5;
                     color: $clr-neu-2;
                     width: 100%;
-                    //background-color: $clr-neu-5;
+                    cursor: initial;
+                    &:focus {
+                        border: 2px solid rgb(0, 119, 255);
+                        &:valid {
+                            border: 2px solid rgb(31, 187, 96);
+                        }
+                    }
+                    
+                    &:invalid {
+                        border: 2px solid rgb(203, 70, 17);
+                    }
                 }
             }
         }
@@ -151,6 +175,16 @@ main {
             background-color: $clr-neu-5;
             text-align: right;
             border-radius: px(5);
+            &:focus {
+                border: 2px solid rgb(0, 119, 255);
+                &:valid {
+                    border: 2px solid rgb(31, 187, 96);
+                }
+            }
+            
+            &:invalid {
+                border: 2px solid rgb(203, 70, 17);
+            }
         }
         
     }
@@ -181,7 +215,7 @@ main {
             color: $clr-neu-2;
         }
     }
-    &-result {
+    &-output {
         @include body-lg;
         color: $clr-pri-1;
         justify-self: flex-end;
@@ -208,18 +242,23 @@ main {
         color: $clr-neu-1;
         border-radius: px(5);
         margin-top: px(12);
-        cursor: pointer;
+        &:focus {
+            border: 2px solid rgb(0, 119, 255);
+        }   
+        
         @include min-width($desktop) {
             grid-row-start: 4;
             grid-row-end: 5;
         }
-        &:hover {
-            background-color: $clr-neu-4;
-            color: $clr-neu-1;
-        }
-        &:enabled {
+        
+        &.enabled {
             background-color: $clr-pri-1;
             color: $clr-neu-1;
+            cursor: pointer;
+            &:hover {
+                background-color: $clr-neu-4;
+                color: $clr-neu-1;
+            }
         }
     }
 }

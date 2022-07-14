@@ -178,7 +178,17 @@ main {
   text-align: right;
   border-radius: 5px;
 }
+.calculator .bill-input:focus {
+  border: 2px solid rgb(0, 119, 255);
+}
+.calculator .bill-input:focus:valid {
+  border: 2px solid rgb(31, 187, 96);
+}
+.calculator .bill-input:invalid {
+  border: 2px solid rgb(203, 70, 17);
+}
 .calculator .tips {
+  position: relative;
   margin-bottom: 32px;
 }
 @media screen and (min-width: 900px) {
@@ -225,6 +235,9 @@ main {
   background-color: hsl(185deg, 41%, 84%);
   color: hsl(183deg, 100%, 15%);
 }
+.calculator .tips-select .percentage:focus {
+  border: 3px solid rgb(0, 119, 255);
+}
 .calculator .tips-select .percentage.selected {
   background-color: hsl(172deg, 67%, 45%);
   color: hsl(183deg, 100%, 15%);
@@ -233,6 +246,16 @@ main {
   background-color: hsl(189deg, 41%, 97%);
   color: hsl(186deg, 14%, 43%);
   width: 100%;
+  cursor: initial;
+}
+.calculator .tips-select .percentage.custom:focus {
+  border: 2px solid rgb(0, 119, 255);
+}
+.calculator .tips-select .percentage.custom:focus:valid {
+  border: 2px solid rgb(31, 187, 96);
+}
+.calculator .tips-select .percentage.custom:invalid {
+  border: 2px solid rgb(203, 70, 17);
 }
 .calculator .people {
   position: relative;
@@ -264,6 +287,15 @@ main {
   background-color: hsl(189deg, 41%, 97%);
   text-align: right;
   border-radius: 5px;
+}
+.calculator .people-input:focus {
+  border: 2px solid rgb(0, 119, 255);
+}
+.calculator .people-input:focus:valid {
+  border: 2px solid rgb(31, 187, 96);
+}
+.calculator .people-input:invalid {
+  border: 2px solid rgb(203, 70, 17);
 }
 
 .result {
@@ -299,7 +331,7 @@ main {
   line-height: 19px;
   color: hsl(186deg, 14%, 43%);
 }
-.result-result {
+.result-output {
   font-size: 32px;
   font-weight: 700;
   line-height: 47px;
@@ -308,7 +340,7 @@ main {
   justify-self: flex-end;
 }
 @media screen and (min-width: 900px) {
-  .result-result {
+  .result-output {
     font-size: 48px;
     font-weight: 700;
     line-height: 71px;
@@ -338,7 +370,9 @@ main {
   color: hsl(183deg, 100%, 15%);
   border-radius: 5px;
   margin-top: 12px;
-  cursor: pointer;
+}
+.result .reset:focus {
+  border: 2px solid rgb(0, 119, 255);
 }
 @media screen and (min-width: 900px) {
   .result .reset {
@@ -346,11 +380,12 @@ main {
     grid-row-end: 5;
   }
 }
-.result .reset:hover {
-  background-color: hsl(185deg, 41%, 84%);
-  color: hsl(183deg, 100%, 15%);
-}
-.result .reset:enabled {
+.result .reset.enabled {
   background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+  cursor: pointer;
+}
+.result .reset.enabled:hover {
+  background-color: hsl(185deg, 41%, 84%);
   color: hsl(183deg, 100%, 15%);
 }/*# sourceMappingURL=style.css.map */

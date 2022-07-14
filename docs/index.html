@@ -24,32 +24,41 @@
     <div class="app">
       <div class="calculator">
         <div class="bill">
-          <div class="bill-title">Bill</div>
-          <input type="text" class="bill-input" value="" placeholder="0" id="bill"><div class="icon icon--dollar"></div>
+          <form>
+            <label for="bill" class="bill-title" id="bill-label" required>Bill</label>
+            <input type="text" class="bill-input" value="" placeholder="0.00" id="bill" name="bill" title="Please enter value in dollars and cents (e.g. 25.12)" pattern="^\d{0,6}\.?\d{1,2}$"><div class="icon icon--dollar"></div>
+          </form>
         </div>
         <div class="tips">
           <div class="tips-title">Select Tip %</div>
           <ul class="tips-select">
-            <button type="button" class="percentage percentage1" data-value="0.05">5%</button>
-            <button type="button" class="percentage percentage2" data-value="0.10">10%</button>
-            <button type="button" class="percentage percentage3" data-value="0.15">15%</button>
-            <button type="button" class="percentage percentage4" data-value="0.25">25%</button>
-            <button type="button" class="percentage percentage5" data-value="0.50">50%</button>
-            <input type="text" class="percentage custom" placeholder="Custom" value="" id="custom">
+            <button type="button" class="percentage" data-value="5">5%</button>
+            <button type="button" class="percentage" data-value="10">10%</button>
+            <button type="button" class="percentage" data-value="15">15%</button>
+            <button type="button" class="percentage" data-value="25">25%</button>
+            <button type="button" class="percentage" data-value="50">50%</button>
+            <form>
+              <label></label>
+              <input type="text" class="percentage custom" placeholder="Custom" title="Please enter 1-2 digits." value="" id="custom" pattern="^\d{1,2}$"><div></div> <!-- div hack for validation(main.js line 43)-->
+            </form>
+            
           </ul>
         </div>
         <div class="people">
-          <div class="people-title">Number of People</div>
-          <input type="text" class="people-input" value="" placeholder="0" id="people"><div class="icon icon--person"></div>
+          <form>
+              <label class="people-title">Number of People<label>
+              <input type="text" class="people-input" value="" placeholder="" id="people" pattern="^[1-9]\d{0,2}$" title="Can't be zero."><div class="icon icon--person"></div>
+          </form>
+          
         </div>
       </div>
       <div class="result">
         <div class="result-label">Tip Amount<span>/ person</span></div>
-        <div class="result-result result-tip">$0.00</div>
+        <div class="result-output result-tip" id="tip">$0.00</div>
         <div class="result-label">Total<span>/ person</span></div>
-        <div class="result-result result-total">$0.00</div>
+        <div class="result-output result-total" id="total">$0.00</div>
         <div class="spacer"></div>
-        <button type="button" class="reset">Reset</button>
+        <button type="button" class="reset" id="reset">Reset</button>
       </div>
     </div>
     
@@ -60,5 +69,6 @@
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
   <script src="js/main.js"></script>
+  
 </body>
 </html>

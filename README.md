@@ -93,7 +93,9 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [When To Use The Button Element](https://css-tricks.com/use-button-element/)
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [querySelector* vs getElementBy*](https://stackoverflow.com/questions/14377590/queryselector-and-queryselectorall-vs-getelementsbyclassname-and-getelementbyid/54819633#54819633)
+- [Numeric Inpout Validation](https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input)
+- [RegEx Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
